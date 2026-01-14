@@ -13,7 +13,7 @@ client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
 
 # 2.모델이 이미지 분류 요청 함수 정의하기
 # client 객체의 models.generate_content 사용
-def classify_image(prompt, image):
+def classify_image(prompt, image,model):
     response = client.models.generate_content(
         model, 
         contents=[prompt, image]
@@ -58,4 +58,5 @@ if uploaded_file:
         with st.spinner('ing...'):
             response = classify_image(prompt, img, model=model)
         st.subheader('Result')
+
         st.code(response)
