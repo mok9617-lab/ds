@@ -1,4 +1,4 @@
 PIL
-google-genai
+google.genai
 
 streamlit
