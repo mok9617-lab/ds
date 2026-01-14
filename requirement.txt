@@ -1,4 +1,0 @@
-PIL
-google-genai
-
-streamlit
