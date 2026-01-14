@@ -15,7 +15,7 @@ client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
 # client 객체의 models.generate_content 사용
 def classify_image(prompt, image, model):
     response = client.models.generate_content(
-        model, 
+        model=model, 
         contents=[prompt, image]
     )
     return response.text
@@ -60,6 +60,7 @@ if uploaded_file:
         st.subheader('Result')
 
         st.code(response)
+
 
 
 
