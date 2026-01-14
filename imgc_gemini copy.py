@@ -56,9 +56,10 @@ if uploaded_file:
     st.image(img, caption = 'Uploaded Image',width='content')
     if st.button('Classification Excution'):
         with st.spinner('ing...'):
-            response = classify_image(prompt, image, model=model)
+            response = classify_image(prompt, img, model=model)
         st.subheader('Result')
 
         st.code(response)
+
 
 
